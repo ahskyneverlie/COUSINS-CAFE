@@ -2,54 +2,20 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>咖啡和奶茶分组</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>未来科技欢迎页</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>咖啡和奶茶分组</h1>
-    </header>
-
-    <main>
-        <section id="menu">
-            <h2>菜单</h2>
-            <ul id="coffee-list">
-                <li data-name="美式咖啡" data-type="咖啡">
-                    <span>美式咖啡</span>
-                    <button onclick="moveToGroup('美式咖啡', '咖啡')">分配到咖啡组</button>
-                </li>
-                <li data-name="拿铁" data-type="咖啡">
-                    <span>拿铁</span>
-                    <button onclick="moveToGroup('拿铁', '咖啡')">分配到咖啡组</button>
-                </li>
-                <li data-name="珍珠奶茶" data-type="奶茶">
-                    <span>珍珠奶茶</span>
-                    <button onclick="moveToGroup('珍珠奶茶', '奶茶')">分配到奶茶组</button>
-                </li>
-                <li data-name="抹茶奶茶" data-type="奶茶">
-                    <span>抹茶奶茶</span>
-                    <button onclick="moveToGroup('抹茶奶茶', '奶茶')">分配到奶茶组</button>
-                </li>
-            </ul>
-        </section>
-
-        <section id="groups">
-            <div class="group" id="coffee-group">
-                <h2>咖啡组</h2>
-                <ul id="coffee-group-items">
-                    <!-- 咖啡组内容将通过JavaScript动态添加 -->
-                </ul>
+    <div class="container">
+        <div class="dynamic-bg"></div>
+        <div class="content">
+            <h1 class="neon-text">欢迎来到未来</h1>
+            <div class="button-group">
+                <button class="btn btn-login" onclick="location.href='login.html'">登录</button>
+                <button class="btn btn-register" onclick="location.href='register.html'">注册</button>
             </div>
-            <div class="group" id="milk-tea-group">
-                <h2>奶茶组</h2>
-                <ul id="milk-tea-group-items">
-                    <!-- 奶茶组内容将通过JavaScript动态添加 -->
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
