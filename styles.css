@@ -1,66 +1,138 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+body {
+    background: #0a0a0a;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dynamic-bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        #00ffff,
+        #ff00ff,
+        #00ff00,
+        #ff0000
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    filter: blur(50px);
+    opacity: 0.3;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
     text-align: center;
 }
 
-main {
-    padding: 20px;
-}
-
-#menu, #groups {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-button {
-    background-color: #28a745;
+.neon-text {
     color: #fff;
+    font-size: 4em;
+    text-shadow: 0 0 10px #00ffff,
+                 0 0 20px #00ffff,
+                 0 0 30px #00ffff;
+    margin-bottom: 2rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
     border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 30px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-button:hover {
-    background-color: #218838;
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00ffff;
+    background: rgba(0, 255, 255, 0.2);
 }
 
-.group {
-    margin-bottom: 20px;
+/* 登录/注册页面样式 */
+.auth-container {
+    position: relative;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.group h2 {
-    margin-bottom: 10px;
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-#coffee-group-items, #milk-tea-group-items {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.back-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
 }
