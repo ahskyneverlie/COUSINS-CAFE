@@ -1,21 +1,62 @@
-// 咖啡菜单数据
-const coffeeMenu = [
-    { name: "美式咖啡", price: 2 },
-    { name: "拿铁", price: 2 },
-    { name: "卡布奇诺", price: 2 },
-    { name: "摩卡", price: 2 },
-    { name: "焦糖玛奇朵", price: 2 }
-];
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-// 获取咖啡列表的ul元素
-const coffeeList = document.getElementById("coffee-list");
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
 
-// 动态生成咖啡菜单项
-coffeeMenu.forEach(coffee => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-        <span>${coffee.name}</span>
-        <span>$${coffee.price}</span>
-    `;
-    coffeeList.appendChild(li);
-});
+main {
+    padding: 20px;
+}
+
+#menu, #cart {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#total-price {
+    font-weight: bold;
+}
