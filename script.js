@@ -1,38 +1,16 @@
 // script.js
-let cart = [];
-let totalPrice = 0;
+function moveToGroup(name, type) {
+    const coffeeGroup = document.getElementById('coffee-group-items');
+    const milkTeaGroup = document.getElementById('milk-tea-group-items');
 
-function addToCart(name, price) {
-    cart.push({ name, price });
-    totalPrice += price;
-    updateCart();
-}
+    // 创建新的列表项
+    const li = document.createElement('li');
+    li.textContent = name;
 
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    const totalPriceElement = document.getElementById('total-price');
-
-    // 清空购物车列表
-    cartItems.innerHTML = '';
-
-    // 添加新的购物车项
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - ${item.price}元`;
-        cartItems.appendChild(li);
-    });
-
-    // 更新总价
-    totalPriceElement.textContent = totalPrice;
-}
-
-function checkout() {
-    if (cart.length === 0) {
-        alert('购物车为空，请先添加商品！');
-    } else {
-        alert(`结算成功！总价: ${totalPrice}元`);
-        cart = [];
-        totalPrice = 0;
-        updateCart();
+    // 根据类型分配到不同的组
+    if (type === '咖啡') {
+        coffeeGroup.appendChild(li);
+    } else if (type === '奶茶') {
+        milkTeaGroup.appendChild(li);
     }
 }
