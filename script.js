@@ -1,62 +1,38 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+// script.js
+let cart = [];
+let totalPrice = 0;
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    totalPrice += price;
+    updateCart();
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+
+    // 清空购物车列表
+    cartItems.innerHTML = '';
+
+    // 添加新的购物车项
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price}元`;
+        cartItems.appendChild(li);
+    });
+
+    // 更新总价
+    totalPriceElement.textContent = totalPrice;
 }
 
-main {
-    padding: 20px;
-}
-
-#menu, #cart {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-#cart-items li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#total-price {
-    font-weight: bold;
+function checkout() {
+    if (cart.length === 0) {
+        alert('购物车为空，请先添加商品！');
+    } else {
+        alert(`结算成功！总价: ${totalPrice}元`);
+        cart = [];
+        totalPrice = 0;
+        updateCart();
+    }
 }
