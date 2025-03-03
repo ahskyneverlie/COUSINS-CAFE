@@ -17,7 +17,7 @@ main {
     padding: 20px;
 }
 
-#menu, #cart {
+#menu, #groups {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
@@ -51,12 +51,16 @@ button:hover {
     background-color: #218838;
 }
 
-#cart-items li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.group {
+    margin-bottom: 20px;
 }
 
-#total-price {
-    font-weight: bold;
+.group h2 {
+    margin-bottom: 10px;
+}
+
+#coffee-group-items, #milk-tea-group-items {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
